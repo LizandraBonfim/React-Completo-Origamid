@@ -1,0 +1,211 @@
+/* STILO USER */
+
+.navUser{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.navUser a,
+.navUser button{
+    background: #eee;
+    height: 40px;
+    width: 40px;
+    border-radius: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.navUser a:hover,
+.navUser a:focus,
+.navUser button:hover,
+.navUser button:focus{
+    background: #fff;
+    box-shadow: 0 0 0 3px #eee;
+    border-color: #333;
+    outline: none;
+}
+
+ .navUser a.active{
+    background: white;
+    box-shadow: 0 0 0 3px #fea;
+    border-color: #fb1;
+
+}
+
+.navUser a.active svg > * {
+    fill: #fb1;
+}
+
+
+/* STILO USER HEADER */
+
+.userHeader{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    
+}
+
+/* ESTILO MENU MOBILE */
+
+.btnMenuMobile{
+    background: #eee;
+    height: 40px;
+    width: 40px;
+    border-radius: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    transition: .2s;
+    cursor: pointer;
+    padding: 0px;
+}
+
+.btnMenuMobile::after{
+    content: '';
+    display: block;
+    width: 1.2rem;
+    height: 2px;
+    border-radius: 2px;
+    background-color: currentColor;
+    box-shadow: 0 6px currentColor, 0 -6px currentColor;
+    transition: 0.2s;
+}
+
+.btnMenuMobile:hover,
+.btnMenuMobile:focus,
+.btnMenuMobileActive{
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px #fea;
+    border-color: #fb1;
+    color: #fb1;
+}
+
+.btnMenuMobileActive::after{
+    transform: rotate(90deg);
+    height: 4px;
+    width: 4px;
+    box-shadow: 0 8px currentColor, 0 -8px currentColor;
+
+}
+
+.navMobile{
+
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 0px;
+    padding: 0 1rem;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    border-radius: .2rem;
+    transform: translateX(-10px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.navMobileActive{
+    pointer-events: initial;
+    transition: 0.3s;
+    transform: initial;
+    opacity: 1  ;
+    z-index: 100;
+}
+
+.navMobile a,
+.navMobile button{
+    display: flex;
+    align-items: center;
+    background: none;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: .5rem 0;
+}
+
+.navMobile a:hover svg > *,
+.navMobile button:hover svg > *{
+    fill: #fb1;
+}
+
+.navMobile button{
+    border-bottom: none;
+}
+.navMobile svg{
+    margin-right: .5rem;
+}
+
+.photoPost{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.inputFile{
+    margin-bottom: 1rem;
+}
+
+.preview{
+    border-radius: 1rem;
+    background-size: cover;
+    background-position: center center;
+}
+
+.preview::after{
+    display: block;
+    content: '';
+    height: 0;
+    padding-bottom: 100%;
+}
+
+.graph{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+}
+
+.graphItem{
+    box-shadow: 0 10px  20px rgba(0, 0, 0, .2);
+    border-radius: .2rem;
+    display: grid;
+    align-items: center;
+}
+
+.total{
+    grid-column: 1/3;
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.VictoryContainer {
+    height: initial !important;
+}
+
+@media(max-width: 40rem){
+   
+    .graph{
+        grid-template-columns: 1fr  ;
+    }
+
+    .total{
+        grid-column: 1;
+
+    }
+    .photoPost{
+        grid-template-columns: 1fr;
+    }
+
+}

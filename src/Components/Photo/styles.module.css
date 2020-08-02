@@ -1,0 +1,203 @@
+.photo{
+    margin: auto;
+    height: 36rem;
+    border-radius: 0.3rem;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 36rem 20rem;
+    grid-template-rows: auto 1fr auto;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(.8);
+    animation: scaleUp .3s forwards;
+}
+
+@keyframes scaleUp{
+    to{
+        opacity: initial;
+        transform: initial;
+    }
+}
+
+.author{
+    opacity: 0.5;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author a:hover{
+    text-decoration: underline;
+}
+
+.visualizacoes::before{
+
+    content: '';
+    width: 16px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 0.25rem;
+    background: url('../../assets/visualizacao-black.svg' ) no-repeat;
+}
+
+
+.img{
+    grid-row: 1/4;
+}
+
+.details{
+    padding: 2rem 2rem 0 2rem ;
+}
+
+.comments{
+    overflow-y: auto;
+    word-break: break-word;
+    padding: 0 2rem;
+}
+
+.comments li{
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.attributes{
+    display: flex;
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.attributes li{
+    margin-right: 2rem;
+}
+
+.attributes li::before{
+    content: '';
+    display: inline-block;
+    height: 20px;
+    margin-right: .5rem;
+    position: relative;
+    top: 3px;
+    width: 2px;
+    background-color: #333;
+    margin-top: 5px;
+}
+
+.form{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: stretch;
+    margin: 1rem;
+}
+
+.textarea{
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    font-family: var(--type-first);
+    resize: none;
+    border: 1px solid #eee;
+    padding: .5rem;
+    border-radius: 0.2rem;
+    background-color: #eee;
+    transition: 0.2s;
+}
+.textarea:hover,
+.textarea:focus{
+    outline: none;
+    border-color: #fb1;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px #fea;
+}
+
+.button{
+    border:none;
+    cursor: pointer;
+    color: #333;
+    background-color: transparent;
+    font-size: 1.2rem;
+    padding: 0 1rem;
+    overflow: hidden;
+}
+
+.button:focus  ,
+.button:hover {
+    outline: none;
+}
+
+.button:focus svg path,
+.button:hover svg path{
+    fill: #fea;
+    stroke: #fb1;
+}
+
+.button:focus svg g,
+.button:hover svg g{
+    animation: latir 0.6s infinite;
+}
+
+/* BOTAO DELETAR FOTO  */
+
+.delete{
+    background-color: #ddd;
+    padding: .3rem .6rem;
+    line-height: 1;
+    border: 1px solid transparent;
+    font-size: 0.875rem;
+    font-family: var(--type-first);
+    cursor: pointer;
+    border-radius: .4rem;
+    transform: 0.3s;
+}
+
+.delete:hover, .delete:focus{
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px #eee;
+    border-color: #333;
+}
+
+.single.photo{
+    grid-template-columns: 1fr;
+    height: auto;
+}
+.single.comments{
+    padding: 0;
+}
+
+.single .details{
+    padding: 2rem 0 0 0;
+}
+.single .img{
+    grid-row: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.single .form{
+    margin: 1rem 0;
+}
+
+
+@keyframes latir{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@media (max-width: 64rem){
+    .photo{
+        height: auto;
+        max-height: calc(100vh - 4rem) ;
+        overflow-y: auto;
+        grid-template-columns: minmax(20rem , 40rem);
+    }
+    .img{
+        grid-row: 1;
+    }
+}
