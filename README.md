@@ -1,4 +1,8 @@
 #Insta-Pet 
+<img src="https://github.com/LizandraBonfim/React-Completo-Origamid/tree/master/src/assets/adiciona.png">
+<img src="https://github.com/LizandraBonfim/React-Completo-Origamid/tree/master/src/assets/feed.png">
+<img src="https://github.com/LizandraBonfim/React-Completo-Origamid/tree/master/src/assets/logn.png">
+
 
 
 
